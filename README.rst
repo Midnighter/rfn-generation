@@ -4,11 +4,43 @@ Flow Network Generation
 
 Flow networks robust against damages are simple model networks described in a
 series of publications by Kaluza *et al*.\ [1_, 2_, 3_]. The C++ code
-presented in this repository allows the generation of such networks via a
+presented in this repository allows for the generation of such networks via a
 simulated evolution.
 
 Although the code was programmed with a single core in mind, the compiled binary
 can easily be (and has been) run multiple times in parallel.
+
+Installation
+------------
+
+In the main directory, you need to edit the `CMakeLists.txt` file. If your
+libraries are installed in non-standard locations, please adapt lines 8 to 11.
+Then run the following commands:
+
+    cmake init .
+    make
+
+If everything went smoothly there should now be a `bin` and `lib` subdirectory.
+Add the path to your environment variable LD_LIBRARY_PATH if you want to run
+things from here. In bash this can be done by:
+
+    export LD_LIBRARY_PATH="$HOME/path/to/rfn-generation/lib:$LD_LIBRARY_PATH"
+
+You can now run the `simulation` binary in the `bin` subdirectory which will
+print some info to stdout.
+
+If you want to install the `bin` and `lib` subdirectories in a different
+location, either edit line 17 of the `CMakeLists.txt` file or invoke:
+
+    make install -DDESTDIR=/your/favourite/path
+
+When you are ready to move from testing to large-scale computation you should
+rebuild the project without debugging and text output, follow these commands:
+
+    cmake -DDEBUG=OFF .
+    make
+
+Enjoy!
 
 Note
 ----
@@ -20,7 +52,7 @@ Requirements
 
 **C++:**
 
-If you install these libraries from system packages, please make sure to also
+*NB*: If you install these libraries from system packages, please make sure to also
 install the `dev` packages as the headers are needed for compilation.
 
 * Boost_/ namely: algorithm, random, graph, filesystem V3, accumulators,
