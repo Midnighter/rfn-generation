@@ -3,7 +3,7 @@ Flow Network Generation
 =======================
 
 Flow networks robust against damages are simple model networks described in a
-series of publications by Kaluza *et al*. [1]_, [2]_, [3]_. The C++ code
+series of publications by Kaluza *et al*.\ [1_, 2_, 3_]. The C++ code
 presented in this repository allows the generation of such networks via a
 simulated evolution.
 
@@ -23,8 +23,8 @@ Requirements
 If you install these libraries from system packages, please make sure to also
 install the `dev` packages as the headers are needed for compilation.
 
-* Boost_ namely: /algorithm, /random, /graph, /filesystem V3, /accumulators,
-  /pending/queue, /program_options
+* Boost_/ namely: algorithm, random, graph, filesystem V3, accumulators,
+  pending/queue, program_options
 * `GNU Scientific Library`__
 
 **Others:**
