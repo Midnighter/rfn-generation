@@ -103,11 +103,11 @@ int main(int argc, char** argv) {
         dir = *name_it;
         // verify network name
         if (bfsys::exists(dir.parent_path())) {
-            dup_name = dir.filename();
+            dup_name = dir.filename().string();
             try {
                 name_exists = verify_name(dup_name, dir.parent_path());
             }
-            catch (bfsys::basic_filesystem_error<bfsys::path>& e) {
+            catch (bfsys::filesystem_error& e) {
                 name_exists = false;
                 dup_name.append("_duplicate");
             }
@@ -116,18 +116,18 @@ int main(int argc, char** argv) {
                 try {
                     name_exists = verify_name(dup_name, dir.parent_path());
                 }
-                catch (bfsys::basic_filesystem_error<bfsys::path>& e) {
+                catch (bfsys::filesystem_error& e) {
                     name_exists = false;
                 }
             }
         }
         else if (dir.parent_path() == "") {
-            dup_name = dir.filename();
+            dup_name = dir.filename().string();
             dir = ".";
             try {
                 name_exists = verify_name(dup_name, dir);
             }
-            catch (bfsys::basic_filesystem_error<bfsys::path>& e) {
+            catch (bfsys::filesystem_error& e) {
                 name_exists = false;
                 dup_name.append("_duplicate");
             }
@@ -136,7 +136,7 @@ int main(int argc, char** argv) {
                 try {
                     name_exists = verify_name(dup_name, dir);
                 }
-                catch (bfsys::basic_filesystem_error<bfsys::path>& e) {
+                catch (bfsys::filesystem_error& e) {
                     name_exists = false;
                 }
             }
@@ -459,7 +459,7 @@ verify_name(std::string dup_name, bfsys::path dir)
     bfsys::directory_iterator end_it;
     for (bfsys::directory_iterator itr(dir); itr != end_it; ++itr) {
         if (!bfsys::is_directory(itr->path())) {
-            if (boost::starts_with(itr->path().filename(), dup_name)) {
+            if (boost::starts_with(itr->path().filename().string(), dup_name)) {
                 return true;
             }
         }
