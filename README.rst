@@ -3,7 +3,7 @@ Flow Network Generation
 =======================
 
 Flow networks robust against damages are simple model networks described in a
-series of publications by Kaluza *et al*.\ [1_, 2_, 3_]. The C++ code
+series of publications by Kaluza *et al*.[\ 1_, 2_, 3_]. The C++ code
 presented in this repository allows for the generation of such networks via a
 simulated evolution.
 
@@ -21,7 +21,7 @@ Then run the following commands::
     make
 
 If everything went smoothly there should now be a ``bin`` and ``lib`` subdirectory.
-Add the path to your environment variable LD_LIBRARY_PATH if you want to run
+Add the path to your environment variable ``LD_LIBRARY_PATH`` if you want to run
 things from here. In bash this can be done by::
 
     export LD_LIBRARY_PATH="$HOME/path/to/rfn-generation/lib:$LD_LIBRARY_PATH"
