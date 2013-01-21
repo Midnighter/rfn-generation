@@ -15,14 +15,14 @@ Installation
 
 In the main directory, you need to edit the `CMakeLists.txt` file. If your
 libraries are installed in non-standard locations, please adapt lines 8 to 11.
-Then run the following commands:
+Then run the following commands::
 
     cmake init .
     make
 
 If everything went smoothly there should now be a `bin` and `lib` subdirectory.
 Add the path to your environment variable LD_LIBRARY_PATH if you want to run
-things from here. In bash this can be done by:
+things from here. In bash this can be done by::
 
     export LD_LIBRARY_PATH="$HOME/path/to/rfn-generation/lib:$LD_LIBRARY_PATH"
 
@@ -30,12 +30,12 @@ You can now run the `simulation` binary in the `bin` subdirectory which will
 print some info to stdout.
 
 If you want to install the `bin` and `lib` subdirectories in a different
-location, either edit line 17 of the `CMakeLists.txt` file or invoke:
+location, either edit line 17 of the `CMakeLists.txt` file or invoke::
 
     make install -DDESTDIR=/your/favourite/path
 
 When you are ready to move from testing to large-scale computation you should
-rebuild the project without debugging and text output, follow these commands:
+rebuild the project without debugging and text output, follow these commands::
 
     cmake -DDEBUG=OFF .
     make
@@ -50,7 +50,8 @@ The output files are binary and their exact structure depends on your system's a
 Requirements
 ------------
 
-**C++:**
+C++:
+~~~~
 
 *NB*: If you install these libraries from system packages, please make sure to also
 install the `dev` packages as the headers are needed for compilation.
@@ -59,7 +60,8 @@ install the `dev` packages as the headers are needed for compilation.
   pending/queue, program_options
 * `GNU Scientific Library`__
 
-**Others:**
+Others:
+~~~~~~~
 
 * cmake_
 
