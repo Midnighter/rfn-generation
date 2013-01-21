@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * filename:    rfn_config.hpp
+ * description: Project configuration through cmake
+ * author:      Moritz Beber
+ * created:     2010-07-23
+ * copyright:   Jacobs University Bremen. All rights reserved.
+ *******************************************************************************
+ *
+ ******************************************************************************/
+
+
+#ifndef RFN_CONFIG_HPP
+#define	RFN_CONFIG_HPP
+
+
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+
+
+#define RFN5_VERSION_MAJOR @RFN5_VERSION_MAJOR@
+#define RFN5_VERSION_MINOR @RFN5_VERSION_MINOR@
+#define RFN5_VERSION_PATCH @RFN5_VERSION_PATCH@
+
+
+#endif	// RFN_CONFIG_HPP
+
